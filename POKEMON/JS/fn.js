@@ -13,7 +13,8 @@ let div1 = document.getElementById(111)
     div1.innerHTML = '<b>si aparece esto es pq funciona</b>'
 }) */
 
-    
+document.getElementById('scrollbutton').addEventListener('click', function scrollToForm() {
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth' })})
 
 
 document.getElementById('boton').addEventListener('click', function luchar(){
@@ -74,12 +75,15 @@ async function getPersonaje(p1, p2){
                 <img src=${p2.sprites.front_default}>
             </div>
         </div>
-         <p>El pokemon ganador es</P>
-       <div class="ganador">
-        <h3>${ganador}</h3>
-        <img src = ${ganadorimg}>
-        <p>con ${ganadoratack} puntos de ataque</p>
         
+        <p>El pokemon ganador es</P>
+      
+        <div class="contenedor-ganador">
+            <div class="ganador">
+                    <h3>${ganador}</h3>
+                    <img src = ${ganadorimg}>
+                    <p>con ${ganadoratack} puntos de ataque</p>
+                </div>
         </div>
         `
 
