@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #6ecdf2 40%, #4ca0e8 100%);
+    color: #fff;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+  
+  header img {
+    height: 40px;
+  }
+  
+  nav a {
+    margin-left: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    height: 550px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #e0f7ff;
+  }
+  
+  .hero-content button {
+    background-color: #ffffff;
+    color: #3b4cca;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .form-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #ffffff10;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: auto;
+    height: 700px;
+  }
+  
+  .form-section input {
+    margin: 0.5rem;
+    padding: 0.7rem;
+    width: 45%;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .form-section button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffcb05;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #result {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #6ecdf2 40%, #4ca0e8 100%);
+    color: #fff;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+  
+  header img {
+    height: 40px;
+  }
+  
+  nav a {
+    margin-left: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    height: 550px;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #e0f7ff;
+  }
+  
+  .hero-content button {
+    background-color: #ffffff;
+    color: #3b4cca;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .form-section {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: #ffffff10;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: auto;
+    height: auto;
+    min-height: 700px;
+  }
+  
+  .form-section input {
+    margin: 0.5rem;
+    padding: 0.7rem;
+    width: 45%;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .form-section button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffcb05;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #result {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+.card {
+    background: #4ca0e8;
+    border-radius: 16px;
+    width:fit-content;
+    margin: 5px;
+    padding: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #fffbe6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .card img {
+    width: 120px;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .card p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #ffffff;
+  }
+  .resultado1 {
+    display: flex;
+    justify-content: center; /* o space-between / space-evenly */
+    flex-wrap: wrap; /* por si querés que se acomoden en pantallas chicas */
+    gap: 1rem; /* espacio entre cards */
+    padding: 1rem;
+
+  }
+  .ganador {
+    background: #ffcb05;
+    border-radius: 16px;
+    width:fit-content;
+    margin: 5px;
+    padding: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .ganador h3 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  .ganador img {
+    width: 120px;
+    height: auto;
+    margin: 1rem auto;
+  }
+  
+  .resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
