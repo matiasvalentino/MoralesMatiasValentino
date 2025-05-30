@@ -1,93 +1,185 @@
-let div1 = document.getElementById(111) 
+/* Variables para generar los numeros de pokemones aleatorios */
+let pokemon = []
 
-/* alert(div1) */
-/* div1.textContent = "Tralalero tralala" */
+/* Variable para llamar a la api y traer pokemones */
+let p = []
 
-/* div1.innerHTML = '<b>hola q tal aseré ja deje</b>' */
+/* Variables para hacer luchar pokemones */
+let pAttack = []
+let pDefense = []
 
-/* function saludar(){
-    div1.innerHTML = '<b>si aparece esto es pq funciona</b>'
-} */
 
-/* bb.addEventListener("click", function(saludar){
-    div1.innerHTML = '<b>si aparece esto es pq funciona</b>'
-}) */
 
 document.getElementById('scrollbutton').addEventListener('click', function scrollToForm() {
     document.getElementById('form').scrollIntoView({ behavior: 'smooth' })})
 
 
-document.getElementById('boton').addEventListener('click', function luchar(){
-    let pk1 = document.getElementById('pokemon1').value;
-    const pk2 = document.getElementById('pokemon2').value;
+/* function pokemonesRandom(min, max) {
+   
+
+    for (var i = 0; i < 6; i++){
+        pokemon[i] =  Math.floor(Math.random() * (max - min + 1) + min)
+
+        console.log(`Pokemon ${i}: ` + pokemon[i])
+  } 
+    getPersonaje(pokemon) 
+ } */
+
+ /* document.getElementById('boton').addEventListener('click',  */
+ function pokemonesRandom(){
+     for (var i = 0; i < 6; i++){
+        let min = 1
+        let max = 1010
+        pokemon[i] =  Math.floor(Math.random() * (max - min + 1) + min)
+
+        console.log(`Pokemon ${i+1}: ` + pokemon[i])
+  } 
+    getPersonaje(pokemon) 
+ }
+/* ) */
+
+/* Llamo a la API con un for asi consulto todos los personajes con menos lineas de codigo */
+async function getPersonaje(p){
     
+         for (var i=0; i<6; i++){
+            const response = await fetch (`https://pokeapi.co/api/v2/pokemon/${p[i]}/`)
+            p[i] =  await response.json()
 
+        console.log(`Personaje ${i+1}: ` + p[i].name)
 
-/*          console.log('Personaje 1: ' + pk1)
-         console.log('Personaje 2: ' + pk2) */
-         getPersonaje(pk1, pk2)
-}
-)
+        /* 2 arrays con los valores de defensa y ataque de todos los pokemones */
+        pAttack[i] = p[i].stats[1].base_stat
+        pDefense[i] = p[i].stats[2].base_stat
 
-let p1 = []
-let p2 = []
+        console.log(pAttack[i])
+        console.log(pDefense[i])
 
-let p1attack = []
-let p2attack = []
-
-async function getPersonaje(p1, p2){
-    const response1 = await fetch (`https://pokeapi.co/api/v2/pokemon/${p1}/`)
-    p1 =  await response1.json()
-
-    const response2 = await fetch (`https://pokeapi.co/api/v2/pokemon/${p2}/`)
-        p2 =  await response2.json()
-        console.log('Personaje 1: ' + p1.name)
-        console.log('Personaje 2: ' + p2.name)
-    
-        let p1attack = p1.stats[1].base_stat
-        let p2attack = p2.stats[2].base_stat
         
 
-        let ganador
-        if (p1attack > p2attack) {
-            ganador = p1.name
-            ganadoratack = p1attack
-            ganadorimg = p1.sprites.front_default
-        } else if (p1attack < p2attack) {
-            ganador = p2.name
-            ganadoratack = p2attack
-            ganadorimg = p2.sprites.front_default
+        } 
+        document.getElementById("participantes").innerHTML = `
+        <div class="resultado1">
+            <div class="e1">
+                
+                <div class="card">
+                    <h3>${p[0].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[0]}</p>
+                    <img src=${p[0].sprites.front_default}>
+                </div>
+
+                <div class="card">
+                    <h3>${p[1].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[1]}</p>
+                    <img src=${p[1].sprites.front_default}>
+                </div>
+
+                <div class="card">
+                    <h3>${p[2].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[2]}</p>
+                    <img src=${p[2].sprites.front_default}>
+                </div>
+            </div>
+
+            <h2>VS</h2>
+
+            <div class="e2">
+                
+                <div class="card">
+                    <h3>${p[3].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[3]}</p>
+                    <img src=${p[3].sprites.front_default}>
+                </div>
+
+                <div class="card">
+                    <h3>${p[4].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[4]}</p>
+                    <img src=${p[4].sprites.front_default}>
+                </div>
+
+                <div class="card">
+                    <h3>${p[5].name}</h3>
+                    <p>Puntos de ataque: ${pAttack[5]}</p>
+                    <img src=${p[5].sprites.front_default}>
+                </div>
+            </div>
+
+        </div>`
+        pelea(pAttack, pDefense, p)
+}
+        
+function pelea(pAttack, pDefense, p){
+
+        
+        let ganador = []
+        let ganadoratack = []
+        let ganadorimg = []
+
+        let e1Attack = pAttack[0]+pAttack[1]+pAttack[2]
+        let e1Defense = pDefense[0]+pDefense[1]+pDefense[2]
+        
+        
+        let e2Attack = pAttack[3]+pAttack[4]+pAttack[5]
+        let e2Defense = pDefense[3]+pDefense[4]+pDefense[5]
+
+        
+        if ((e1Defense - e2Attack) > (e2Defense - e1Attack)) {
+            ganador[0] = p[0].name 
+            ganador[1] = p[1].name 
+            ganador[2] = p[2].name 
+            
+            ganadoratack[0] = pAttack[0]
+            ganadoratack[1] = pAttack[1]
+            ganadoratack[2] = pAttack[2]
+
+            ganadorimg [0]= p[0].sprites.front_default
+            ganadorimg[1] = p[1].sprites.front_default
+            ganadorimg[2] = p[2].sprites.front_default
+
+        } else if ((e1Defense - e2Attack) < (e2Defense - e1Attack)) {
+            ganador[0] = p[3].name 
+            ganador[1] = p[4].name 
+            ganador[2] = p[5].name 
+            
+            ganadoratack[0] = pAttack[3]
+            ganadoratack[1] = pAttack[4]
+            ganadoratack[2] = pAttack[5]
+
+            ganadorimg[0] = p[3].sprites.front_default
+            ganadorimg[1] = p[4].sprites.front_default
+            ganadorimg[2] = p[5].sprites.front_default
+
         }
         
+    
 
+    /* Reemplazo */
 
+    
         document.getElementById("resultado").innerHTML = `
-        <div class="resultado1">
-            <div class="card">
-                <h3>${p1.name}</h3>
-                <p>Puntos de ataque: ${p1attack}</p>
-                <img src=${p1.sprites.front_default}>
-            </div>
-
-            <div class="card">
-                <h3>${p2.name}</h3>
-                <p>Puntos de ataque: ${p2attack}</p>
-                <img src=${p2.sprites.front_default}>
-            </div>
-        </div>
+       
         
-        <p>El pokemon ganador es</P>
+        <p>El equipo ganador es</P>
       
         <div class="contenedor-ganador">
             <div class="ganador">
-                    <h3>${ganador}</h3>
-                    <img src = ${ganadorimg}>
-                    <p>con ${ganadoratack} puntos de ataque</p>
+                    <h3>${ganador[0]}</h3>
+                    <img src = ${ganadorimg[0]}>
+                    <p>con ${ganadoratack[0]} puntos de ataque</p>
+                </div>
+                
+                <div class="ganador">
+                    <h3>${ganador[1]}</h3>
+                    <img src = ${ganadorimg[1]}>
+                    <p>con ${ganadoratack[1]} puntos de ataque</p>
+                </div>
+
+                <div class="ganador">
+                    <h3>${ganador[2]}</h3>
+                    <img src = ${ganadorimg[2]}>
+                    <p>con ${ganadoratack[2]} puntos de ataque</p>
                 </div>
         </div>
         `
 
-         
-        
-    }
-
+    }  
+    

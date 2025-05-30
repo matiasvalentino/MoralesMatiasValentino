@@ -183,6 +183,7 @@ body {
   
   .form-section button {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
     border: none;
@@ -199,9 +200,39 @@ body {
     color: #fff;
   }
 
+.e1{
+  background-color: rgb(151, 91, 255);
+  border-radius: 16px;
+  width:fit-content;
+  margin: 5px;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 610px;
+  
+}
+
+.e2{
+  background-color: rgb(201, 110, 204);
+  border-radius: 16px;
+  width:fit-content;
+  margin: 5px;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 610px;
+  
+}
+
 .card {
     background: #4ca0e8;
-    border-radius: 16px;
+    border-radius: 10px;
     width:fit-content;
     margin: 5px;
     padding: .5rem;
@@ -238,6 +269,7 @@ body {
     flex-wrap: wrap; /* por si querés que se acomoden en pantallas chicas */
     gap: 1rem; /* espacio entre cards */
     padding: 1rem;
+    align-items: center;
 
   }
   .ganador {
