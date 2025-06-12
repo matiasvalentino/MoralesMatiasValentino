@@ -20,7 +20,7 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Compará pokemones</h1>
+      <h1>Batalla de pokemones</h1>
       <p>6 pokemones serán elegidos aleatoriamente formando 2 equipos, luego lucharán entre sí.</p>
       <button id="scrollbutton" onclick="scrollToForm()">Empezar</button>
       <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/31543daa-4bc2-4b07-8d0c-e734fb4948f9/dfl8bfs-048688b0-52b2-4e59-96fd-45c88337abd1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzMxNTQzZGFhLTRiYzItNGIwNy04ZDBjLWU3MzRmYjQ5NDhmOVwvZGZsOGJmcy0wNDg2ODhiMC01MmIyLTRlNTktOTZmZC00NWM4ODMzN2FiZDEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6W4maDC671100zj52pK2f_K4WDr8w8_9wpE5_2if0qU" alt="">
@@ -28,19 +28,35 @@
   </section>
 
   <section id="form" class="form-section">
-    <h2>Ingresa los pokemones</h2>
+    <h2>Batalla</h2>
    <!--  <input type="number" id="pokemon1" placeholder="Pokémon 1">
     <input type="number" id="pokemon2" placeholder="Pokémon 2"> -->
     <br>
-    <button id="boton" onclick="pokemonesRandom()">Elegir aleatoriamente y luchar</button>
-    <div id="participantes"> </div>
-    <div id="resultado"> </div>
+<!--     <button id="boton" onclick="pokemonesRandom()">Elegir aleatoriamente</button> 
+ -->    <div id="participantes" class="participantes"> </div>
+    
+    <div style="display: flex; gap: 1rem;">
+      <div class="dado-container">
+        <button id="dado1" class="dado">Tirar dados</button>
+        <p id="tiradas1"></p>
+      </div>
+      
+        <div class="dado-container">
+          <button id="dado2" class="dado">Tirar dados</button>
+          <p id="tiradas2"></p>
+      </div>
+    </div>
+    <button id="pelea" onclick="mostrarResultados(ganador, ganadorAtack, ganadorImg)" disabled >Pelear</button>    
+    
+     <div id="resultado" class="ganadores"> </div>
   </section>
 
  
 
   </script>
   <script src="JS/fn.js"></script>
+    <script src="JS/fn2.js"></script>
+
   <footer style="text-align: center; padding: 2rem; background-color: #000000; color: white;">
     <p>Matías Valentino Morales | Tecnicatura en Análisis y Desarrollo de Software - Instituto Sedes Sapientiae</p>
     <p>&copy; 2025</p>

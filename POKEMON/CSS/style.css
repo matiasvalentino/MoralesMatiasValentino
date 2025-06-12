@@ -192,7 +192,14 @@ body {
     color: #000;
     cursor: pointer;
     font-weight: bold;
+    
   }
+.form-section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #ffcb05;
+}
+  
   
   #result {
     margin-top: 2rem;
@@ -200,35 +207,35 @@ body {
     color: #fff;
   }
 
-.e1{
+.e-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(151, 91, 255);
   border-radius: 16px;
   width:fit-content;
-  margin: 5px;
   padding: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.e-card p {
+  margin: 2px;
+  width: 100%;
+}
+
+.e{
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 610px;
+
   
 }
 
-.e2{
-  background-color: rgb(201, 110, 204);
-  border-radius: 16px;
-  width:fit-content;
-  margin: 5px;
-  padding: .5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 610px;
-  
-}
+
 
 .card {
     background: #4ca0e8;
@@ -259,15 +266,15 @@ body {
   }
 
   .card p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0.5rem 0;
     color: #ffffff;
   }
   .resultado1 {
     display: flex;
-    justify-content: center; /* o space-between / space-evenly */
-    flex-wrap: wrap; /* por si querés que se acomoden en pantallas chicas */
-    gap: 1rem; /* espacio entre cards */
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
     padding: 1rem;
     align-items: center;
 
@@ -315,3 +322,42 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.dado-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.2); /* blanco al 50% de opacidad */  
+  backdrop-filter: blur(120px);
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.dado{
+  height: 8rem;
+  width: 8rem;
+  background-color: rgb(255, 251, 236) !important;
+  border-color: #333333;
+  
+
+}
+
+.tiradas{
+  text-align: left;
+  margin: 0%;
+  padding: 0%;
+}
+
+.participantes{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ganadores{
+  display: flex;
+  flex-direction: column;
+}
+
