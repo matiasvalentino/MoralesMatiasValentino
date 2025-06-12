@@ -138,11 +138,10 @@ function insertarPersonajes(p){
     `
 
 
-    pelea(p)
-        
+    document.getElementById("pelea").addEventListener("click", pelea(p));
+    
 
 }   
-
 
 /* -------------------------------------------------------------------------- */
 /* Reemplazo */
